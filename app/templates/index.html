@@ -26,29 +26,29 @@
   <br>
   <div class="center">
     <div class="row categories">
-      <a href="{{url_for('main.pitches_category',category='Music Blog')}}">
+      <a href="{{url_for('main.blogs_category',category='Music Blog')}}">
         <div class="category col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <span>Music Blogs</span>
       </div></a>
-      <a href="{{url_for('main.pitches_category',category='Sports Blog')}}"><div class="category col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <a href="{{url_for('main.blogs_category',category='Sports Blog')}}"><div class="category col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <span>Sports Blogs</span>
       </div></a>
 
 
-      <a href="{{url_for('main.pitches_category',category='Events Blog')}}"><div class="category col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <a href="{{url_for('main.blogs_category',category='Events Blog')}}"><div class="category col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <span>Events Blogs</span>
       </div></a>
     </div>
     <div class="row categories">
-      <a href="{{url_for('main.pitches_category',category='Travel Blog')}}"><div class="category col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <a href="{{url_for('main.blogs_category',category='Travel Blog')}}"><div class="category col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <span>Travel Blogs</span>
       </div></a>
 
 
-      <a href="{{url_for('main.pitches_category',category='Food Blog')}}"><div class="category col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <a href="{{url_for('main.blogs_category',category='Food Blog')}}"><div class="category col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <span>Food Blogs</span>
       </div></a>
-      <a href="{{url_for('main.pitches_category',category='All Blogs')}}"><div class="category col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <a href="{{url_for('main.blogs_category',category='All Blogs')}}"><div class="category col-xs-12 col-sm-12 col-md-4 col-lg-4">
         <span>All Blogs</span>
       </div></a>
     </div>
@@ -77,27 +77,24 @@
     height: 4px;
     align-content: center;
     border-radius: 8px;
-    background-color: #414341;
-    border: none;
-    color: #FFFFFF;
     text-align: center;
     font-size: 16px;
     padding: 21px;
     width: 375px;
-    transition: all 0.5s;
-    cursor: pointer;
+     
+     
     margin: 6px;
   }
 
   .category span {
-    cursor: pointer;
+    
     display: inline-block;
     position: relative;
-    transition: 0.5s;
+    
   }
 
   .category span:after {
-    content: '\00bb';
+   
     position: absolute;
     opacity: 0;
     top: 0;

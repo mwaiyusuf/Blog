@@ -22,7 +22,7 @@ class User(UserMixin,db.Model):
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
     password_hash = db.Column(db.String(255))
-    pitches = db.relationship('Pitch', backref='user', lazy="dynamic")
+    pitches = db.relationship('blog', backref='user', lazy="dynamic")
     comments = db.relationship("Comment", backref="user", lazy="dynamic")
 
 
@@ -42,33 +42,33 @@ class User(UserMixin,db.Model):
 
 
 
-class Pitch(db.Model):
+class Blog(db.Model):
 
-    __tablename__ = 'pitches'
+    __tablename__ = 'blogs'
 
     id = db.Column(db.Integer, primary_key=True)
     title= db.Column(db.String(300), index=True)
     content = db.Column(db.String(300), index=True)
     category = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    comments = db.relationship('Comment', backref='pitch', lazy="dynamic")
+    comments = db.relationship('Comment', backref='blog', lazy="dynamic")
 
     date = db.Column(db.String)
     time = db.Column(db.String)
 
     def save_pitch(self, pitch):
-        ''' Save the pitches '''
+        ''' Save the blogs '''
         db.session.add(pitch)
         db.session.commit()
 
     # display pitches
     @classmethod
     def get_pitches(id):
-        pitches = Pitch.query.filter_by(category = id).all()
-        return pitches
+        pitches = blog.query.filter_by(category = id).all()
+        return blogs
 
     def __repr__(self):
-        return f"Pitch('{self.id}', '{self.time}')"
+        return f"blog('{self.id}', '{self.time}')"
 
 
 
@@ -79,7 +79,7 @@ class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     post_comment = db.Column(db.String(255), index=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    pitch_id = db.Column(db.Integer, db.ForeignKey('pitches.id'))
+    pitch_id = db.Column(db.Integer, db.ForeignKey('blogs.id'))
     date = db.Column(db.String)
     time = db.Column(db.String)
 
@@ -93,5 +93,5 @@ class Comment(db.Model):
     # display comments
     @classmethod
     def get_comments(cls, id):
-        comments = Comment.query.filter_by(pitch_id=id).all()
+        comments = Comment.query.filter_by(blog_id=id).all()
         return comments
