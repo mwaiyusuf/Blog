@@ -18,9 +18,9 @@ def index():
     '''
     pitches =Pitch.query.order_by(Pitch.date.desc()).all()
     title = "My Blog -- Home"
-    sambu = random_post()
-    quote = sambu["quote"]
-    quote_author = sambu ["author"]
+    pop = random_post()
+    quote = pop["quote"]
+    quote_author = pop ["author"]
     return render_template('index.html', title = title, pitches = pitches, quote = quote , quote_author=quote_author)
 
 
