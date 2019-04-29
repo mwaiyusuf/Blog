@@ -3,7 +3,7 @@ import os
 class Config:
 
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:ouma12@localhost/pitcher2'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa: @localhost/pitcher2'
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     # SQLALCHEMY_TRACK_MODIFICATIONS = False
 
@@ -33,7 +33,7 @@ class TestConfig(Config):
 
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:ouma12@localhost/pitcher2'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa: @localhost/pitcher2'
     DEBUG = True
 
 config_options = {
