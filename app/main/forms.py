@@ -5,11 +5,11 @@ from wtforms.validators import Required
 class PitchForm(FlaskForm):
 
     title = StringField('Post title')
-    category = SelectField('Post Category', choices=[('Fashion', 'fashion-blog'),
-                                                      ('Food', 'food-blog'),
-                                                      ('Travel', 'travel-blogs'),
-                                                      ('Music', 'music-blog'),
+    category = SelectField('Post Category', choices=[('Music', 'music-blog'),
                                                       ('Sports', 'sports-blog'),
+                                                      ('Events', 'events-blogs'),
+                                                      ('Travel', 'travel-blog'),
+                                                      ('Food', 'food-blog'),
                                                       ('random', 'random')])
     content = TextAreaField('Type Here')
     submit = SubmitField('Create Post')
